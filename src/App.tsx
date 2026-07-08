@@ -6,6 +6,9 @@ import { Preloader } from '@/sections/Preloader'
 import { Hero } from '@/sections/Hero'
 import { IdentityShift } from '@/sections/IdentityShift'
 import { ChapterAX } from '@/sections/ChapterAX'
+import { RewindStrip } from '@/sections/RewindStrip'
+import { ChapterSystems } from '@/sections/ChapterSystems'
+import { profile } from '@/content/profile'
 
 export default function App() {
   const [booted, setBooted] = useState(false)
@@ -18,6 +21,8 @@ export default function App() {
           <Hero booted={booted} />
           <IdentityShift />
           <ChapterAX />
+          <RewindStrip {...profile.rewinds[0]} />
+          <ChapterSystems />
         </main>
       </LenisProvider>
     </MotionProvider>
