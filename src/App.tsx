@@ -9,6 +9,8 @@ import { ChapterAX } from '@/sections/ChapterAX'
 import { RewindStrip } from '@/sections/RewindStrip'
 import { ChapterSystems } from '@/sections/ChapterSystems'
 import { ChapterData } from '@/sections/ChapterData'
+import { Timeline } from '@/sections/Timeline'
+import { Capabilities } from '@/sections/Capabilities'
 import { profile } from '@/content/profile'
 
 export default function App() {
@@ -26,6 +28,8 @@ export default function App() {
           <ChapterSystems />
           <RewindStrip {...profile.rewinds[1]} />
           <ChapterData />
+          <Timeline />
+          <Capabilities />
         </main>
       </LenisProvider>
     </MotionProvider>
