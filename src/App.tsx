@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { MotionProvider } from '@/providers/MotionProvider'
 import { LenisProvider } from '@/providers/LenisProvider'
 import { MeshField } from '@/canvas/MeshField'
+import { Nav } from '@/ui/Nav'
+import { Rail } from '@/ui/Rail'
 import { Preloader } from '@/sections/Preloader'
 import { Hero } from '@/sections/Hero'
 import { IdentityShift } from '@/sections/IdentityShift'
@@ -11,6 +13,7 @@ import { ChapterSystems } from '@/sections/ChapterSystems'
 import { ChapterData } from '@/sections/ChapterData'
 import { Timeline } from '@/sections/Timeline'
 import { Capabilities } from '@/sections/Capabilities'
+import { Contact } from '@/sections/Contact'
 import { profile } from '@/content/profile'
 
 export default function App() {
@@ -19,6 +22,9 @@ export default function App() {
     <MotionProvider>
       <LenisProvider>
         <MeshField />
+        <div className="progressive-blur-top" aria-hidden="true"><i /><i /><i /></div>
+        <Nav />
+        <Rail />
         <Preloader onComplete={() => setBooted(true)} />
         <main className="relative">
           <Hero booted={booted} />
@@ -30,6 +36,7 @@ export default function App() {
           <ChapterData />
           <Timeline />
           <Capabilities />
+          <Contact />
         </main>
       </LenisProvider>
     </MotionProvider>
