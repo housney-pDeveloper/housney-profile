@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useLayoutEffect, useRef } from 'react'
 import { useGSAP } from '@gsap/react'
 import { gsap } from '@/motion/gsap'
 import { splitWords } from '@/motion/splitWords'
@@ -12,6 +12,26 @@ export function Hero({ booted }: { booted: boolean }) {
   const root = useRef<HTMLElement>(null)
   const nameRef = useRef<HTMLHeadingElement>(null)
   const tagRef = useRef<HTMLParagraphElement>(null)
+
+  // 프리로더 커튼이 걷히는 동안(booted 전) 히어로가 맨 텍스트로 보였다가 booted 진입
+  // 타임라인이 처음부터 다시 숨겼다 올리며 "표시→깜빡 사라짐→재등장"하는 것을 막기 위해,
+  // 마운트 시점에 (reduced가 아닐 때만) 미리 숨김 상태로 세팅해 둔다. 이후 booted 진입
+  // 타임라인은 이미 숨겨진 상태에서 단 한 번만 리빌한다.
+  // reduced에서는 절대 숨기지 않는다 — booted 게이트 없이 즉시 전체 노출이 하드 요구사항이며,
+  // (드물게) 부팅 전에 reduced로 전환되는 경우를 대비해 이미 숨겨졌을 수 있는 상태도 되돌린다.
+  useLayoutEffect(() => {
+    if (!root.current) return
+    if (reduced) {
+      const hidden = root.current.querySelectorAll('.split-word, [data-hero-fade]')
+      if (hidden.length) gsap.set(hidden, { clearProps: 'all' })
+      return
+    }
+    if (booted) return // booted 진입 타임라인이 이미 리빌을 처리
+    splitWords(nameRef.current!)
+    splitWords(tagRef.current!)
+    gsap.set(root.current.querySelectorAll('.split-word'), { yPercent: 110, autoAlpha: 0 })
+    gsap.set(root.current.querySelectorAll('[data-hero-fade]'), { y: 24, autoAlpha: 0 })
+  }, [reduced, booted])
 
   useGSAP(
     () => {
