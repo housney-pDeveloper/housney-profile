@@ -4,6 +4,7 @@ import { LenisProvider } from '@/providers/LenisProvider'
 import { MeshField } from '@/canvas/MeshField'
 import { Preloader } from '@/sections/Preloader'
 import { Hero } from '@/sections/Hero'
+import { IdentityShift } from '@/sections/IdentityShift'
 
 export default function App() {
   const [booted, setBooted] = useState(false)
@@ -14,6 +15,7 @@ export default function App() {
         <Preloader onComplete={() => setBooted(true)} />
         <main className="relative">
           <Hero booted={booted} />
+          <IdentityShift />
         </main>
       </LenisProvider>
     </MotionProvider>
