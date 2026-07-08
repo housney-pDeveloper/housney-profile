@@ -6,3 +6,6 @@ dist
 
 # tsc -b (project build mode) incremental cache — machine-specific, not reproducible
 *.tsbuildinfo
+
+# third-party skills installed locally (MengTo) — keep on disk, do not track
+.claude/skills/
