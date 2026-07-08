@@ -8,6 +8,7 @@ import { IdentityShift } from '@/sections/IdentityShift'
 import { ChapterAX } from '@/sections/ChapterAX'
 import { RewindStrip } from '@/sections/RewindStrip'
 import { ChapterSystems } from '@/sections/ChapterSystems'
+import { ChapterData } from '@/sections/ChapterData'
 import { profile } from '@/content/profile'
 
 export default function App() {
@@ -23,6 +24,8 @@ export default function App() {
           <ChapterAX />
           <RewindStrip {...profile.rewinds[0]} />
           <ChapterSystems />
+          <RewindStrip {...profile.rewinds[1]} />
+          <ChapterData />
         </main>
       </LenisProvider>
     </MotionProvider>

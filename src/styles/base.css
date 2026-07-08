@@ -56,3 +56,12 @@ body {
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
+
+/* 파이프라인 노드 점화 */
+[data-pipe-node], [data-lane-col="out"] { opacity: 0.45; transition: opacity 0.5s, box-shadow 0.5s; }
+.pipe-active, [data-lane="conductor"] [data-pipe-node],
+[data-lane="hr"] [data-pipe-node], [data-lane="support"] [data-pipe-node] { opacity: 1; }
+.pipe-active { box-shadow: 0 0 0 1px rgba(219, 234, 254, 0.25), 0 12px 40px rgba(29, 78, 216, 0.18); }
+@media (prefers-reduced-motion: reduce) {
+  [data-pipe-node], [data-lane-col="out"] { opacity: 1; }
+}
