@@ -1,3 +1,11 @@
+import { MotionProvider } from '@/providers/MotionProvider'
+import { MeshField } from '@/canvas/MeshField'
+
 export default function App() {
-  return <main className="font-display text-mesh-text p-10">scaffold ok</main>
+  return (
+    <MotionProvider>
+      <MeshField />
+      <main className="relative">{/* sections mount here */}</main>
+    </MotionProvider>
+  )
 }
