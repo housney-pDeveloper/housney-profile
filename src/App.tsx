@@ -5,6 +5,7 @@ import { MeshField } from '@/canvas/MeshField'
 import { Preloader } from '@/sections/Preloader'
 import { Hero } from '@/sections/Hero'
 import { IdentityShift } from '@/sections/IdentityShift'
+import { ChapterAX } from '@/sections/ChapterAX'
 
 export default function App() {
   const [booted, setBooted] = useState(false)
@@ -16,6 +17,7 @@ export default function App() {
         <main className="relative">
           <Hero booted={booted} />
           <IdentityShift />
+          <ChapterAX />
         </main>
       </LenisProvider>
     </MotionProvider>
