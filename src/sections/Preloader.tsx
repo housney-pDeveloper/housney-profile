@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useLayoutEffect, useRef, useState } from 'react'
 import { gsap } from '@/motion/gsap'
 import { useReducedMotion } from '@/providers/MotionProvider'
 
@@ -8,13 +8,15 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
   const rootRef = useRef<HTMLDivElement>(null)
   const barRef = useRef<HTMLDivElement>(null)
   const doneRef = useRef(false)
+  const onCompleteRef = useRef(onComplete)
+  onCompleteRef.current = onComplete
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const finish = () => {
       if (doneRef.current) return
       doneRef.current = true
       setDone(true)
-      onComplete()
+      onCompleteRef.current()
     }
     if (reduced) {
       finish()
@@ -28,7 +30,7 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
       clearTimeout(guard)
       tl.kill()
     }
-  }, [reduced, onComplete])
+  }, [reduced])
 
   if (done) return null
   return (
