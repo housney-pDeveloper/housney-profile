@@ -1,11 +1,21 @@
+import { useState } from 'react'
 import { MotionProvider } from '@/providers/MotionProvider'
+import { LenisProvider } from '@/providers/LenisProvider'
 import { MeshField } from '@/canvas/MeshField'
+import { Preloader } from '@/sections/Preloader'
+import { Hero } from '@/sections/Hero'
 
 export default function App() {
+  const [booted, setBooted] = useState(false)
   return (
     <MotionProvider>
-      <MeshField />
-      <main className="relative">{/* sections mount here */}</main>
+      <LenisProvider>
+        <MeshField />
+        <Preloader onComplete={() => setBooted(true)} />
+        <main className="relative">
+          <Hero booted={booted} />
+        </main>
+      </LenisProvider>
     </MotionProvider>
   )
 }
