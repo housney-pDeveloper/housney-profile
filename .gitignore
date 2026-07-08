@@ -1,0 +1,8 @@
+node_modules
+dist
+*.local
+.idea
+.DS_Store
+
+# tsc -b (project build mode) incremental cache — machine-specific, not reproducible
+*.tsbuildinfo

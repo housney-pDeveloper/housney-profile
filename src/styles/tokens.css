@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@theme {
+  --color-mesh-bg: #030712;
+  --color-mesh-bg-blue: #07111f;
+  --color-mesh-text: #f8fafc;
+  --color-mesh-copy: #9fb2ca;
+  --color-mesh-muted: #64748b;
+  --color-mesh-accent: #dbeafe;
+  --color-mesh-cobalt: #1d4ed8;
+  --color-mesh-indigo: #312e81;
+  --color-mesh-steel: #385a7c;
+  --color-mesh-line: rgba(191, 219, 254, 0.14);
+  --color-mesh-line-strong: rgba(226, 232, 240, 0.28);
+  --font-display: "Space Grotesk Variable", "Pretendard Variable", sans-serif;
+  --font-sans: "Pretendard Variable", sans-serif;
+  --font-mono: "JetBrains Mono Variable", monospace;
+}
