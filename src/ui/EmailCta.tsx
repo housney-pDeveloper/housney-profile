@@ -12,7 +12,7 @@ export function EmailCta({ email }: { email: string }) {
             setTimeout(() => setCopied(false), 2000)
           })
         }}
-        className="rounded-full bg-mesh-text px-8 py-4 font-display text-lg font-medium text-[#020617] shadow-[0_16px_36px_rgba(219,234,254,0.18)] transition-transform hover:-translate-y-0.5"
+        className="rounded-full bg-mesh-text px-8 py-4 font-display text-lg font-medium text-mesh-bg shadow-[0_16px_36px_rgba(0,0,0,0.15)] transition-transform hover:-translate-y-0.5"
       >
         {email}
       </a>

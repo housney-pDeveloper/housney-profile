@@ -45,13 +45,13 @@ export function RadialDiagram() {
         return (
           <g key={app.name}>
             <line data-link x1={CX} y1={CY} x2={x} y2={y}
-              stroke={app.owned ? 'rgba(219,234,254,0.45)' : 'rgba(191,219,254,0.14)'} strokeWidth="1" />
+              stroke={app.owned ? 'rgba(0,0,0,0.45)' : 'rgba(0,0,0,0.12)'} strokeWidth="1" />
             <g data-app-node className={app.owned ? 'owned' : ''}>
               <circle cx={x} cy={y} r={app.owned ? 7 : 4.5}
-                fill={app.owned ? '#dbeafe' : '#1e293b'}
-                stroke={app.owned ? '#dbeafe' : 'rgba(191,219,254,0.3)'} />
+                fill={app.owned ? '#0a0a0a' : '#d4d4d8'}
+                stroke={app.owned ? '#0a0a0a' : 'rgba(0,0,0,0.2)'} />
               <text x={x} y={y + (y > CY ? 26 : -16)} textAnchor="middle"
-                fill={app.owned ? '#dbeafe' : '#64748b'}
+                fill={app.owned ? '#0a0a0a' : '#8a8a92'}
                 style={{ font: `500 ${app.owned ? 15 : 13}px var(--font-sans)` }}>
                 {app.name}
               </text>
@@ -59,11 +59,11 @@ export function RadialDiagram() {
           </g>
         )
       })}
-      <circle cx={CX} cy={CY} r="86" fill="rgba(7,13,25,0.9)" stroke="rgba(219,234,254,0.4)" />
-      <text x={CX} y={CY - 6} textAnchor="middle" fill="#f8fafc" style={{ font: '600 17px var(--font-sans)' }}>
+      <circle cx={CX} cy={CY} r="86" fill="rgba(255,255,255,0.92)" stroke="rgba(0,0,0,0.35)" />
+      <text x={CX} y={CY - 6} textAnchor="middle" fill="#0a0a0a" style={{ font: '600 17px var(--font-sans)' }}>
         {profile.systems.framework.name}
       </text>
-      <text x={CX} y={CY + 18} textAnchor="middle" fill="#9fb2ca" style={{ font: '12px var(--font-mono)' }}>
+      <text x={CX} y={CY + 18} textAnchor="middle" fill="#52525b" style={{ font: '12px var(--font-mono)' }}>
         {profile.systems.framework.metric}
       </text>
     </svg>

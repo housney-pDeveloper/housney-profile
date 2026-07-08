@@ -106,21 +106,20 @@ function initWebGL(canvas: HTMLCanvasElement) {
 
 /** 2D 캔버스 폴백 — 라디얼 그라디언트 드리프트 */
 function draw2D(ctx: CanvasRenderingContext2D, w: number, h: number, time: number, mood: MeshMood) {
-  ctx.fillStyle = '#0a0a0a'
+  ctx.fillStyle = '#f7f7f8'
   ctx.fillRect(0, 0, w, h)
-  ctx.globalCompositeOperation = 'screen'
-  const cobalt = `rgba(124,124,133,${0.5 * mood.intensity})`
-  const steel = `rgba(100,100,108,${0.45 * mood.intensity})`
-  const warm = mood.temperature > 0.5 ? cobalt : steel
+  ctx.globalCompositeOperation = 'multiply'
+  const a = Math.min(0.10 + 0.10 * mood.intensity, 0.22)
+  const cloud = `rgba(0,0,0,${a})`
   const pts = [
-    { x: 0.22 + Math.sin(time * 0.00018) * 0.05, y: 0.32, r: 0.45, c: warm },
-    { x: 0.76, y: 0.22 + Math.cos(time * 0.00016) * 0.05, r: 0.38, c: `rgba(74,74,82,${0.5 * mood.intensity})` },
-    { x: 0.7, y: 0.74, r: 0.52, c: steel },
+    { x: 0.22 + Math.sin(time * 0.00018) * 0.05, y: 0.32, r: 0.45, c: cloud },
+    { x: 0.76, y: 0.22 + Math.cos(time * 0.00016) * 0.05, r: 0.38, c: `rgba(0,0,0,${a * 0.9})` },
+    { x: 0.7, y: 0.74, r: 0.52, c: cloud },
   ]
   for (const p of pts) {
     const g = ctx.createRadialGradient(p.x * w, p.y * h, 0, p.x * w, p.y * h, Math.max(w, h) * p.r)
     g.addColorStop(0, p.c)
-    g.addColorStop(1, 'rgba(10,10,10,0)')
+    g.addColorStop(1, 'rgba(0,0,0,0)')
     ctx.fillStyle = g
     ctx.fillRect(0, 0, w, h)
   }

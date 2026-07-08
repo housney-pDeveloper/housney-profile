@@ -20,14 +20,14 @@ export function Nav() {
             key={item.id}
             href={`#${item.id}`}
             onClick={e => go(e, item.id)}
-            className="hidden rounded-full px-3.5 py-1.5 text-sm text-mesh-copy transition-colors hover:bg-white/8 hover:text-mesh-text md:block"
+            className="hidden rounded-full px-3.5 py-1.5 text-sm text-mesh-copy transition-colors hover:bg-black/8 hover:text-mesh-text md:block"
           >
             {item.label}
           </a>
         ))}
         <a
           href={`mailto:${profile.contact.email}`}
-          className="rounded-full bg-mesh-text px-4 py-1.5 text-sm font-medium text-[#020617]"
+          className="rounded-full bg-mesh-text px-4 py-1.5 text-sm font-medium text-mesh-bg"
         >
           ✉
         </a>

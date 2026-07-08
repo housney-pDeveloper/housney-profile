@@ -1,17 +1,17 @@
 @import "tailwindcss";
 
 @theme {
-  --color-mesh-bg: #0a0a0a;
-  --color-mesh-bg-blue: #141416;
-  --color-mesh-text: #fafafa;
-  --color-mesh-copy: #a1a1aa;
-  --color-mesh-muted: #71717a;
-  --color-mesh-accent: #e4e4e7;
-  --color-mesh-cobalt: #7c7c85;
-  --color-mesh-indigo: #4a4a52;
-  --color-mesh-steel: #64646c;
-  --color-mesh-line: rgba(255, 255, 255, 0.10);
-  --color-mesh-line-strong: rgba(255, 255, 255, 0.22);
+  --color-mesh-bg: #f7f7f8;
+  --color-mesh-bg-blue: #ffffff;
+  --color-mesh-text: #0a0a0a;
+  --color-mesh-copy: #52525b;
+  --color-mesh-muted: #8a8a92;
+  --color-mesh-accent: #0a0a0a;
+  --color-mesh-cobalt: #3f3f46;
+  --color-mesh-indigo: #52525b;
+  --color-mesh-steel: #71717a;
+  --color-mesh-line: rgba(0, 0, 0, 0.12);
+  --color-mesh-line-strong: rgba(0, 0, 0, 0.26);
   --font-display: "Space Grotesk Variable", "Pretendard Variable", sans-serif;
   --font-sans: "Pretendard Variable", sans-serif;
   --font-mono: "JetBrains Mono Variable", monospace;

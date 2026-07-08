@@ -5,22 +5,22 @@ html { scroll-behavior: auto; }
 body {
   min-height: 100vh;
   background:
-    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.05), transparent 34rem),
-    linear-gradient(180deg, #141416, #0a0a0a 48%, #050505);
+    radial-gradient(circle at 50% 0%, rgba(0, 0, 0, 0.03), transparent 34rem),
+    linear-gradient(180deg, #ffffff, #f7f7f8 48%, #efeff1);
   color: var(--color-mesh-text);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
 
-::selection { color: #020617; background: var(--color-mesh-accent); }
+::selection { color: #ffffff; background: var(--color-mesh-accent); }
 
 /* 보더 그라디언트 글래스 셸 (mesh-shell 패턴) */
 .glass-border {
   border: 1px solid transparent;
   background:
-    linear-gradient(rgba(20, 20, 22, 0.82), rgba(20, 20, 22, 0.82)) padding-box,
-    linear-gradient(145deg, rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.04)) border-box;
+    linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.72)) padding-box,
+    linear-gradient(145deg, rgba(0, 0, 0, 0.16), rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.02)) border-box;
 }
 
 /* 모노 라벨 공통 */
@@ -47,10 +47,10 @@ body {
 .mesh-static {
   position: fixed; inset: 0; z-index: -1; pointer-events: none;
   background:
-    radial-gradient(42rem 30rem at 22% 32%, rgba(255, 255, 255, 0.06), transparent 70%),
-    radial-gradient(36rem 26rem at 76% 22%, rgba(190, 190, 200, 0.06), transparent 70%),
-    radial-gradient(46rem 34rem at 70% 74%, rgba(150, 150, 160, 0.05), transparent 70%),
-    #0a0a0a;
+    radial-gradient(42rem 30rem at 22% 32%, rgba(0, 0, 0, 0.045), transparent 70%),
+    radial-gradient(36rem 26rem at 76% 22%, rgba(0, 0, 0, 0.035), transparent 70%),
+    radial-gradient(46rem 34rem at 70% 74%, rgba(0, 0, 0, 0.04), transparent 70%),
+    #f7f7f8;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -61,7 +61,7 @@ body {
 [data-pipe-node], [data-lane-col="out"] { opacity: 0.45; transition: opacity 0.5s, box-shadow 0.5s; }
 .pipe-active, [data-lane="conductor"] [data-pipe-node],
 [data-lane="hr"] [data-pipe-node], [data-lane="support"] [data-pipe-node] { opacity: 1; }
-.pipe-active { box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.20), 0 12px 40px rgba(120, 120, 130, 0.22); }
+.pipe-active { box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12), 0 12px 40px rgba(0, 0, 0, 0.10); }
 @media (prefers-reduced-motion: reduce) {
   [data-pipe-node], [data-lane-col="out"] { opacity: 1; }
 }

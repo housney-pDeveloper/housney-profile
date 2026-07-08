@@ -48,7 +48,7 @@ export function LocBarChart() {
               <i className="h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: LANE_COLOR[p.lane] }} aria-hidden="true" />
               {p.name}
             </span>
-            <div className="h-2 rounded-full bg-white/5">
+            <div className="h-2 rounded-full bg-black/10">
               <div data-bar-fill className="h-full rounded-full"
                 style={{ width: `${(p.loc / max) * 100}%`, background: LANE_COLOR[p.lane] }} />
             </div>
