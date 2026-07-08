@@ -22,11 +22,11 @@ void main() {
   float t = u_time * 0.00015;
   vec2 p = u_pointer * 0.05;
 
-  vec3 base   = vec3(0.012, 0.027, 0.071);  /* #030712 */
-  vec3 cobalt = vec3(0.114, 0.306, 0.847);
-  vec3 indigo = vec3(0.192, 0.180, 0.506);
-  vec3 steel  = vec3(0.220, 0.353, 0.486);
-  vec3 accent = vec3(0.859, 0.918, 0.996);
+  vec3 base   = vec3(0.039, 0.039, 0.043);  /* #0a0a0a mono */
+  vec3 cobalt = vec3(0.44, 0.44, 0.48);
+  vec3 indigo = vec3(0.27, 0.27, 0.30);
+  vec3 steel  = vec3(0.36, 0.36, 0.40);
+  vec3 accent = vec3(0.90, 0.90, 0.92);
   vec3 warm = mix(steel, cobalt, u_temp);
 
   float b1 = blob(uv, vec2(0.25 + sin(t) * 0.06, 0.35 + cos(t * 0.9) * 0.05) + p, 0.45);

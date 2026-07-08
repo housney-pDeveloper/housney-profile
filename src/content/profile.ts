@@ -48,6 +48,7 @@ export const profile = {
   hero: {
     status: 'PRO · 개발책임 — PLATFORM AX',
     name: 'LEE HYEONSU',
+    nameKo: '이현수',
     tagline: 'AI가 개발하는 조직을 설계합니다.',
     breadcrumb: ['데이터', '풀스택', 'AX'],
     stats: [

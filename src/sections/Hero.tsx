@@ -66,7 +66,10 @@ export function Hero({ booted }: { booted: boolean }) {
           <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-mesh-accent" aria-hidden="true" />
           {profile.hero.status}
         </p>
-        <h1 ref={nameRef} className="font-display text-6xl font-semibold leading-[0.95] tracking-tight text-mesh-text md:text-[9rem]">
+        <p data-hero-fade className="font-sans text-2xl font-medium tracking-wide text-mesh-copy md:text-3xl">
+          {profile.hero.nameKo}
+        </p>
+        <h1 ref={nameRef} className="mt-1 font-display text-6xl font-semibold leading-[0.95] tracking-tight text-mesh-text md:text-[9rem]">
           {profile.hero.name}
         </h1>
         <p ref={tagRef} className="mt-6 max-w-xl text-xl text-mesh-copy md:text-2xl">

@@ -5,10 +5,10 @@ import { useReducedMotion } from '@/providers/MotionProvider'
 import { profile, type Lane, type PipelinePackage } from '@/content/profile'
 
 export const LANE_COLOR: Record<Lane, string> = {
-  conductor: '#dbeafe',
-  main: '#1d4ed8',
-  hr: '#385a7c',
-  support: '#64748b',
+  conductor: '#e4e4e7',
+  main: '#a1a1aa',
+  hr: '#71717a',
+  support: '#52525b',
 }
 
 function Node({ pkg }: { pkg: PipelinePackage }) {
@@ -87,7 +87,7 @@ export function PipelineDiagram() {
           {!reduced && (
             <div className="pointer-events-none absolute -left-4 top-8 bottom-8 w-px bg-mesh-line" aria-hidden="true">
               <div data-spine className="h-full w-full bg-mesh-accent" />
-              <div ref={pulseRef} className="absolute -left-[3px] h-[7px] w-[7px] rounded-full bg-mesh-accent shadow-[0_0_16px_rgba(219,234,254,0.9)]" />
+              <div ref={pulseRef} className="absolute -left-[3px] h-[7px] w-[7px] rounded-full bg-mesh-accent shadow-[0_0_16px_rgba(255,255,255,0.85)]" />
             </div>
           )}
           {mains.map(p => <Node key={p.id} pkg={p} />)}
