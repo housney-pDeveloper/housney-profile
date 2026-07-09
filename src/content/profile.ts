@@ -84,7 +84,6 @@ export const profile = {
         title: '사내 AI 플러그인 마켓플레이스',
         body: '레지스트리 주입식 코어 + 프로젝트 특화 플러그인 아키텍처. 신규 프로젝트는 커맨드 한 번으로 AI 개발 골격이 생성됩니다.',
         metric: '에이전트 문서 274 · 훅 34 · 스킬 17',
-        featured: true,
       },
       {
         id: 'ci-gate',

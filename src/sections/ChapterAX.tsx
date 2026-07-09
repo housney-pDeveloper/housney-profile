@@ -40,8 +40,8 @@ export function ChapterAX() {
       </div>
       <div className="grid gap-5 md:grid-cols-3">
         {profile.ax.cards.map(card => (
-          <div key={card.id} data-reveal className={card.featured ? 'md:col-span-2' : ''}>
-            <GlassCard featured={card.featured} className="h-full">
+          <div key={card.id} data-reveal>
+            <GlassCard className="h-full">
               <h3 className="font-display text-xl font-medium text-mesh-text">{card.title}</h3>
               <p className="mt-3 text-sm leading-relaxed text-mesh-copy">{card.body}</p>
               {card.metric && <p className="mono-label mt-5 text-mesh-accent">{card.metric}</p>}

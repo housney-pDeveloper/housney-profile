@@ -27,9 +27,8 @@ describe('profile SSOT integrity', () => {
     expect(profile.systems.apps.filter(a => a.owned)).toHaveLength(5)
   })
 
-  it('벤토 6카드(첫 카드 featured), 타임라인 3장 최근 먼저, 스탯 4개', () => {
+  it('벤토 6카드, 타임라인 3장 최근 먼저, 스탯 4개', () => {
     expect(profile.ax.cards).toHaveLength(6)
-    expect(profile.ax.cards[0].featured).toBe(true)
     expect(profile.timeline).toHaveLength(3)
     expect(profile.timeline[0].period.startsWith('2026')).toBe(true)
     expect(profile.hero.stats).toHaveLength(4)
