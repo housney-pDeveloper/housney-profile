@@ -75,7 +75,7 @@ export function Hero({ booted }: { booted: boolean }) {
         <p ref={tagRef} className="mt-6 max-w-xl text-xl text-mesh-copy md:text-2xl">
           {profile.hero.tagline}
         </p>
-        <p data-hero-fade className="mono-label mt-4 text-mesh-muted">
+        <p data-hero-fade className="mt-4 font-mono text-[1.05rem] uppercase tracking-[0.14em] text-mesh-muted">
           {profile.hero.breadcrumb.join(' → ')}
         </p>
 
