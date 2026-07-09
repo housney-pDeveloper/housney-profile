@@ -59,7 +59,7 @@ export function RadialDiagram() {
           </g>
         )
       })}
-      <circle cx={CX} cy={CY} r="86" fill="rgba(255,255,255,0.92)" stroke="rgba(0,0,0,0.35)" />
+      <circle cx={CX} cy={CY} r="135" fill="rgba(255,255,255,0.92)" stroke="rgba(0,0,0,0.35)" />
       <text x={CX} y={CY - 6} textAnchor="middle" fill="#0a0a0a" style={{ font: '600 17px var(--font-sans)' }}>
         {profile.systems.framework.name}
       </text>
