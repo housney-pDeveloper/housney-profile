@@ -11,6 +11,7 @@ import { ChapterAX } from '@/sections/ChapterAX'
 import { RewindStrip } from '@/sections/RewindStrip'
 import { ChapterSystems } from '@/sections/ChapterSystems'
 import { ChapterData } from '@/sections/ChapterData'
+import { BackendChapter } from '@/sections/BackendChapter'
 import { Timeline } from '@/sections/Timeline'
 import { Capabilities } from '@/sections/Capabilities'
 import { Contact } from '@/sections/Contact'
@@ -34,6 +35,7 @@ export default function App() {
           <ChapterSystems />
           <RewindStrip {...profile.rewinds[1]} />
           <ChapterData />
+          <BackendChapter />
           <Timeline />
           <Capabilities />
           <Contact />

@@ -35,6 +35,7 @@ export const profile = {
     { id: 'ax', label: 'AX' },
     { id: 'systems', label: 'Systems' },
     { id: 'data', label: 'Data' },
+    { id: 'backend', label: 'Backend' },
     { id: 'timeline', label: 'Journey' },
     { id: 'contact', label: 'Contact' },
   ],
@@ -43,6 +44,7 @@ export const profile = {
     { id: 'ax', num: '01', year: '2026' },
     { id: 'systems', num: '02', year: '2023–26' },
     { id: 'data', num: '03', year: '2021' },
+    { id: 'backend', num: '04', year: '2021 →' },
   ],
 
   hero: {
@@ -202,6 +204,33 @@ export const profile = {
       '월마감 자동화의 시작점 — 굿리치 차세대 영업지원 시스템(Vue2 · Spring Boot)에서 HR·리포트 풀스택과 데이터 월마감을 담당했습니다.',
   },
 
+  backend: {
+    chapter: 'CHAPTER 04',
+    title: 'BACKEND & SERVICES',
+    era: 'SINCE 2021',
+    narrative:
+      '시작은 백엔드였습니다. 서버를 짜는 일에서 출발해, 지금은 요청과 이벤트가 흐르는 아키텍처 자체를 설계합니다.',
+    archTitle: '요청과 이벤트가 흐르는 3-서버 경계',
+    tiers: [
+      { id: 'gateway', name: 'Gateway', tech: 'Spring Cloud Gateway · WebFlux', role: 'JWT 인증 · 라우팅 · 리액티브', note: 'stateless' },
+      { id: 'app', name: 'Application', tech: 'Spring MVC', role: '비즈니스 · REST API · 이벤트 발행', note: '264 REST API' },
+      { id: 'worker', name: 'Worker', tech: '@ConditionalOnProperty', role: '메시지 소비 · 배치 · Outbox 처리', note: '13 Feature Toggle' },
+    ],
+    bus: 'RabbitMQ · Outbox 패턴 · 멱등키 · DLQ 재처리',
+    foundation: 'Common — PII 암복호화·마스킹 엔진 · 통일 에러코드 체계',
+    archMetric: '행사관리 SaaS 백엔드 · 11만 LOC · 1,193 파일 · 63 tables',
+    servicesNote: '보험 영업지원 · 20+ 모듈 MSA에서 직접 소유한 도메인 서비스',
+    services: [
+      { name: '리포트 서비스', detail: 'iText PDF · POI Excel 산출', files: 695 },
+      { name: '인사 서비스', detail: '조직 · 발령 · 마감', files: 631 },
+      { name: '수수료 서비스', detail: 'Quartz 월마감 배치', files: 394 },
+      { name: '게이트웨이 코어', detail: '전사 재사용 라이브러리', files: 28 },
+    ],
+    chips: ['Java 17 · 21', 'Spring Boot 3', 'Spring Cloud Gateway', 'WebFlux', 'RabbitMQ', 'Redis', 'Quartz', 'MyBatis'],
+    legacy:
+      '2021 굿리치에서 Java · Spring Boot 백엔드로 커리어를 시작 — HR · 리포트 서비스와 데이터 월마감 자동화.',
+  },
+
   timeline: [
     {
       company: '핀게이트 · Platform AX',
@@ -226,7 +255,7 @@ export const profile = {
       chips: ['Vue 3', 'TypeScript', 'Spring Boot 3', 'Oracle PL/SQL', 'MyBatis'],
     },
     {
-      company: '굿리치 ((구)리치앤코)',
+      company: '굿리치 - (구)리치앤코',
       period: '2021.02 — 2023.07',
       role: '사원',
       points: [
@@ -266,7 +295,7 @@ export const profile = {
     headline: "Let's build the way we build.",
     sub: '함께 조직의 개발 방식을 바꿔볼까요?',
     email: 'hyeonsu1013@naver.com',
-    meta: '이 사이트는 Claude Code 페어링으로 설계·구현되었습니다 — 제가 일하는 방식 그대로.',
+    meta: '— 제가 일하는 방식 그대로 —',
   },
 } as const
 
