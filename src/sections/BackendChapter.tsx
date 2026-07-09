@@ -6,6 +6,7 @@ import { useSectionReveal } from '@/motion/useSectionReveal'
 import { SectionLabel } from '@/ui/SectionLabel'
 import { GlassCard } from '@/ui/GlassCard'
 import { BackendArchitecture } from '@/ui/BackendArchitecture'
+import { Sentences } from '@/ui/Sentences'
 import { profile } from '@/content/profile'
 
 export function BackendChapter() {
@@ -30,7 +31,9 @@ export function BackendChapter() {
   return (
     <section ref={root} id="backend" className="mx-auto max-w-6xl scroll-mt-24 px-6 py-32 md:px-10">
       <SectionLabel chapter={b.chapter} title={b.title} era={b.era} />
-      <p data-reveal className="mb-14 max-w-2xl text-lg text-mesh-copy">{b.narrative}</p>
+      <p data-reveal className="mb-14 max-w-2xl text-lg text-mesh-copy">
+        <Sentences text={b.narrative} />
+      </p>
 
       <div data-reveal>
         <BackendArchitecture />

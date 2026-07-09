@@ -13,7 +13,8 @@ describe('BackendChapter', () => {
     )
     expect(container.querySelector('#backend')).toBeTruthy()
     expect(screen.getByRole('heading', { name: profile.backend.title })).toBeInTheDocument()
-    expect(screen.getByText(profile.backend.narrative)).toBeInTheDocument()
+    // 내러티브는 문장 단위로 분리 렌더되므로 대표 구절로 확인
+    expect(container.textContent).toContain('아키텍처 자체를 설계합니다')
     for (const t of profile.backend.tiers) {
       expect(screen.getByText(t.name)).toBeInTheDocument()
     }

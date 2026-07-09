@@ -11,6 +11,10 @@ body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  /* 한글은 기본값에서 글자 단위로 아무 데서나 끊긴다 — 어절(단어) 단위로만 줄바꿈 */
+  word-break: keep-all;
+  /* 마지막 줄 고아 단어 방지 + 줄 분배 개선 */
+  text-wrap: pretty;
 }
 
 ::selection { color: #ffffff; background: var(--color-mesh-accent); }
