@@ -49,7 +49,7 @@ export const profile = {
     status: 'PRO · 개발책임 — PLATFORM AX',
     name: 'LEE HYEONSU',
     nameKo: '이현수',
-    tagline: 'AI가 개발하는 조직을 설계합니다.',
+    tagline: 'AI로 일하는 조직을 설계하고, 전사 AX를 이끕니다.',
     breadcrumb: ['데이터', '풀스택', 'AX'],
     stats: [
       { value: 5, suffix: '+', label: 'Years', sub: '2021.02 — 현재' },
@@ -67,8 +67,8 @@ export const profile = {
 
   identity: {
     before: '35,000줄의 정산 로직을 직접 쓰던 개발자는',
-    after: '이제, AI가 그 코드를 쓰게 만듭니다',
-    accentWords: ['AI가', '쓰게', '만듭니다'],
+    after: '이제, 전사의 AI 전환(AX)을 직접 설계하고 이끕니다',
+    accentWords: ['전환(AX)을', '직접', '이끕니다'],
     years: [2021, 2026] as const,
   },
 
@@ -76,7 +76,8 @@ export const profile = {
     chapter: 'CHAPTER 01',
     title: 'AX. NOW.',
     era: '2026 —',
-    opening: '코드를 쓰는 것에서, 코드를 쓰는 시스템을 만드는 것으로.',
+    opening: '개인의 생산성이 아니라, 조직 전체가 AI로 개발하는 방식을 만들었습니다.',
+    proof: '그 증거 — 직접 설계하고 운영하는 시스템',
     cards: [
       {
         id: 'marketplace',

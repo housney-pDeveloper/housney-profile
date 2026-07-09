@@ -30,9 +30,14 @@ export function ChapterAX() {
   return (
     <section ref={root} id="ax" className="mx-auto max-w-6xl scroll-mt-24 px-6 py-32 md:px-10">
       <SectionLabel chapter={profile.ax.chapter} title={profile.ax.title} era={profile.ax.era} />
-      <p ref={openingRef} className="mb-16 max-w-3xl font-display text-2xl text-mesh-copy md:text-3xl">
+      <p ref={openingRef} className="mb-6 max-w-3xl font-display text-2xl text-mesh-copy md:text-3xl">
         {profile.ax.opening}
       </p>
+      <div data-reveal className="mb-14 flex items-center gap-3">
+        <span className="h-1 w-1 rounded-full bg-mesh-accent" aria-hidden="true" />
+        <span className="mono-label text-mesh-copy">{profile.ax.proof}</span>
+        <span className="h-px flex-1 bg-mesh-line" aria-hidden="true" />
+      </div>
       <div className="grid gap-5 md:grid-cols-3">
         {profile.ax.cards.map(card => (
           <div key={card.id} data-reveal className={card.featured ? 'md:col-span-2' : ''}>
