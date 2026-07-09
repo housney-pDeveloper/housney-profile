@@ -8,4 +8,8 @@ dist
 *.tsbuildinfo
 
 # third-party skills installed locally (MengTo) — keep on disk, do not track
-.claude/skills/
+.claude/
+.superpowers/
+docs/
+scripts/
+
