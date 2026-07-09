@@ -59,7 +59,7 @@ export function BackendChapter() {
         ))}
       </div>
 
-      <p data-reveal className="mono-label mt-16 max-w-2xl normal-case tracking-normal text-mesh-muted">
+      <p data-reveal className="mono-label mt-16 max-w-md normal-case tracking-normal text-mesh-muted">
         {b.legacy}
       </p>
     </section>

@@ -10,10 +10,6 @@ export function ChapterSystems() {
     <section ref={root} id="systems" className="mx-auto max-w-6xl scroll-mt-24 px-6 py-32 md:px-10">
       <SectionLabel chapter={profile.systems.chapter} title={profile.systems.title} era={profile.systems.era} />
       <p data-reveal className="mb-14 max-w-2xl text-lg text-mesh-copy">{profile.systems.narrative}</p>
-      <div data-reveal>
-        <RadialDiagram />
-        <p className="mono-label mt-4 text-center">{profile.systems.appsNote}</p>
-      </div>
       <div className="mt-16 grid gap-5 md:grid-cols-3">
         {profile.systems.cards.map(card => (
           <div key={card.id} data-reveal>
@@ -29,6 +25,10 @@ export function ChapterSystems() {
         {profile.systems.chips.map(chip => (
           <span key={chip} className="glass-border rounded-full px-3 py-1.5 text-xs text-mesh-copy">{chip}</span>
         ))}
+      </div>
+      <div data-reveal>
+        <RadialDiagram />
+        <p className="mono-label mt-4 text-center">{profile.systems.appsNote}</p>
       </div>
     </section>
   )

@@ -62,14 +62,14 @@ export function Hero({ booted }: { booted: boolean }) {
   return (
     <section ref={root} id="top" className="relative flex min-h-screen items-center overflow-hidden">
       <div data-hero-inner className="mx-auto w-full max-w-6xl px-6 py-28 md:px-10">
-        <p data-hero-fade className="mono-label mb-6 flex items-center gap-2 text-mesh-copy">
-          <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-mesh-accent" aria-hidden="true" />
+        <p data-hero-fade className="mb-6 flex items-center gap-2 font-mono text-[1.08rem] uppercase tracking-[0.14em] text-mesh-muted">
+          <span className="h-2 w-2 animate-pulse rounded-full bg-mesh-accent" aria-hidden="true" />
           {profile.hero.status}
         </p>
         <p data-hero-fade className="font-sans text-2xl font-medium tracking-wide text-mesh-copy md:text-3xl">
           {profile.hero.nameKo}
         </p>
-        <h1 ref={nameRef} className="mt-1 font-display text-6xl font-semibold leading-[0.95] tracking-tight text-mesh-text md:text-[9rem]">
+        <h1 ref={nameRef} className="mt-1 font-display text-6xl font-semibold leading-[0.95] tracking-tight text-mesh-text md:text-[7rem]">
           {profile.hero.name}
         </h1>
         <p ref={tagRef} className="mt-6 max-w-xl text-xl text-mesh-copy md:text-2xl">

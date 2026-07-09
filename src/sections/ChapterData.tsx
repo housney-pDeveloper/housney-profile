@@ -26,7 +26,7 @@ export function ChapterData() {
   return (
     <section ref={root} id="data" className="mx-auto max-w-6xl scroll-mt-24 px-6 py-32 md:px-10">
       <SectionLabel chapter={profile.data.chapter} title={profile.data.title} era={profile.data.era} />
-      <p data-reveal className="mb-6 max-w-3xl text-lg text-mesh-copy">
+      <p data-reveal className="mb-6 max-w-3xl text-md text-mesh-copy">
         <Sentences text={profile.data.narrative} />
       </p>
       <p ref={callbackRef} className="mb-16 font-display text-2xl text-mesh-text md:text-3xl">
@@ -37,7 +37,7 @@ export function ChapterData() {
         <LocBarChart />
       </div>
       <Totals />
-      <p data-reveal className="mono-label mt-16 max-w-2xl normal-case tracking-normal text-mesh-muted">
+      <p data-reveal className="mono-label mt-16 max-w-5xl normal-case tracking-normal text-mesh-muted">
         {profile.data.legacy}
       </p>
     </section>
