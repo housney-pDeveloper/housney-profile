@@ -49,7 +49,7 @@ export const profile = {
     status: 'PRO · 개발책임 — PLATFORM AX',
     name: 'LEE HYEONSU',
     nameKo: '이현수',
-    tagline: 'AI로 일하는 조직을 설계하고, 전사 AX를 이끕니다.',
+    tagline: 'AI로 일하는 조직을 설계합니다.',
     breadcrumb: ['데이터', '풀스택', 'AX'],
     stats: [
       { value: 5, suffix: '+', label: 'Years', sub: '2021.02 — 현재' },
@@ -67,8 +67,8 @@ export const profile = {
 
   identity: {
     before: '35,000줄의 정산 로직을 직접 쓰던 개발자는',
-    after: '이제, 전사의 AI 전환(AX)을 직접 설계하고 이끕니다',
-    accentWords: ['전환(AX)을', '직접', '이끕니다'],
+    after: '이제는 코드가 아니라, 코드를 만드는 시스템을 설계합니다',
+    accentWords: ['시스템을', '설계합니다'],
     years: [2021, 2026] as const,
   },
 
