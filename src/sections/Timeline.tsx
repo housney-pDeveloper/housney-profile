@@ -4,13 +4,13 @@ import { profile } from '@/content/profile'
 export function Timeline() {
   const root = useStickyStack<HTMLElement>()
   return (
-    <section ref={root} id="timeline" className="mx-auto max-w-4xl scroll-mt-24 px-6 py-32 md:px-10">
+    <section ref={root} id="career" className="mx-auto max-w-4xl scroll-mt-24 px-6 py-32 md:px-10">
       <header className="mb-14 flex items-center gap-4">
-        <span className="mono-label">JOURNEY — FACTS</span>
+        <span className="mono-label">02 · CAREER</span>
         <span className="h-px flex-1 bg-mesh-line" aria-hidden="true" />
       </header>
       <div className="flex flex-col gap-8">
-        {profile.timeline.map(item => (
+        {profile.career.map(item => (
           <article
             key={item.period}
             data-stack-card

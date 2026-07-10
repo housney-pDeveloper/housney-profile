@@ -34,7 +34,7 @@ export function PipelineDiagram() {
   const reduced = useReducedMotion()
   const root = useRef<HTMLDivElement>(null)
   const pulseRef = useRef<HTMLDivElement>(null)
-  const pkgs = profile.data.packages
+  const pkgs = profile.work.fields.database.packages
   const conductor = pkgs.find(p => p.lane === 'conductor')!
   const mains = pkgs.filter(p => p.lane === 'main').sort((a, b) => a.step! - b.step!)
   const hrs = pkgs.filter(p => p.lane === 'hr')
@@ -77,13 +77,13 @@ export function PipelineDiagram() {
       <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_minmax(0,540px)_1fr]">
         {/* HR 선행 레인 */}
         <div className="flex flex-col gap-3 lg:pt-4" data-lane="hr">
-          <span className="mono-label" style={{ color: LANE_COLOR.hr }}>{profile.data.laneLabels.hr}</span>
+          <span className="mono-label" style={{ color: LANE_COLOR.hr }}>{profile.work.fields.database.laneLabels.hr}</span>
           {hrs.map(p => <Node key={p.id} pkg={p} />)}
         </div>
 
         {/* 본선 스파인 */}
         <div className="relative flex flex-col gap-4" data-lane="main">
-          <span className="mono-label" style={{ color: LANE_COLOR.main }}>{profile.data.laneLabels.main}</span>
+          <span className="mono-label" style={{ color: LANE_COLOR.main }}>{profile.work.fields.database.laneLabels.main}</span>
           {!reduced && (
             <div className="pointer-events-none absolute -left-4 top-8 bottom-8 w-px bg-mesh-line" aria-hidden="true">
               <div data-spine className="h-full w-full bg-mesh-accent" />
@@ -92,13 +92,13 @@ export function PipelineDiagram() {
           )}
           {mains.map(p => <Node key={p.id} pkg={p} />)}
           <div data-lane-col="out" className="glass-border rounded-2xl border-mesh-accent px-5 py-4 text-center">
-            <span className="font-medium text-mesh-accent">{profile.data.output}</span>
+            <span className="font-medium text-mesh-accent">{profile.work.fields.database.output}</span>
           </div>
         </div>
 
         {/* 지원 레인 */}
         <div className="flex flex-col gap-3 lg:pt-4" data-lane="support">
-          <span className="mono-label" style={{ color: LANE_COLOR.support }}>{profile.data.laneLabels.support}</span>
+          <span className="mono-label" style={{ color: LANE_COLOR.support }}>{profile.work.fields.database.laneLabels.support}</span>
           {supports.map(p => <Node key={p.id} pkg={p} />)}
         </div>
       </div>

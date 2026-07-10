@@ -8,9 +8,9 @@ import { LANE_COLOR } from './PipelineDiagram'
 export function LocBarChart() {
   const reduced = useReducedMotion()
   const root = useRef<HTMLDivElement>(null)
-  const sorted = [...profile.data.packages].sort((a, b) => b.loc - a.loc)
+  const sorted = [...profile.work.fields.database.packages].sort((a, b) => b.loc - a.loc)
   const max = sorted[0].loc
-  const lanes = Object.entries(profile.data.laneLabels) as [Lane, string][]
+  const lanes = Object.entries(profile.work.fields.database.laneLabels) as [Lane, string][]
 
   useGSAP(
     () => {

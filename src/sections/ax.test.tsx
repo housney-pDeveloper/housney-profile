@@ -4,18 +4,17 @@ import { MotionProvider } from '@/providers/MotionProvider'
 import { ChapterAX } from './ChapterAX'
 import { profile } from '@/content/profile'
 
-describe('ChapterAX', () => {
-  it('6개 카드와 지표 스트립 렌더, 균등 3열 그리드(featured/2칸 span 없음)', () => {
+describe('ChapterAX (FIELD 05)', () => {
+  it('6개 카드와 내러티브 렌더, 균등 3열 그리드', () => {
     const { container } = render(
       <MotionProvider>
         <ChapterAX />
       </MotionProvider>,
     )
-    for (const c of profile.ax.cards) {
+    for (const c of profile.work.fields.ax.cards) {
       expect(screen.getByText(c.title)).toBeInTheDocument()
     }
-    expect(screen.getByText(profile.ax.aiMetrics)).toBeInTheDocument()
-    // 모든 카드 동일 너비 — 어떤 카드도 2칸을 차지하지 않는다
+    expect(container.textContent).toContain(profile.work.fields.ax.narrative)
     expect(container.querySelector('.md\\:col-span-2')).toBeNull()
     expect(container.querySelectorAll('.md\\:grid-cols-3 > [data-reveal]')).toHaveLength(6)
   })

@@ -11,7 +11,7 @@ describe('PipelineDiagram', () => {
   it('14개 노드 전부 + 출력 노드 렌더, 본선은 step 순서', () => {
     const { container } = wrap(<PipelineDiagram />)
     expect(container.querySelectorAll('[data-pipe-node]')).toHaveLength(14)
-    expect(screen.getByText(profile.data.output)).toBeInTheDocument()
+    expect(screen.getByText(profile.work.fields.database.output)).toBeInTheDocument()
     const mains = [...container.querySelectorAll('[data-lane="main"] [data-pipe-name]')].map(n => n.textContent)
     expect(mains[0]).toBe('리스크 계약 판별')
     expect(mains[6]).toBe('마감 검증')

@@ -12,7 +12,7 @@ import { profile } from '@/content/profile'
 export function BackendChapter() {
   const reduced = useReducedMotion()
   const root = useSectionReveal<HTMLElement>()
-  const b = profile.backend
+  const f = profile.work.fields.backend
 
   useGSAP(
     () => {
@@ -30,17 +30,9 @@ export function BackendChapter() {
 
   return (
     <section ref={root} id="backend" className="mx-auto max-w-6xl scroll-mt-24 px-6 py-32 md:px-10">
-      <div data-reveal className="mb-16 flex flex-col items-center gap-5">
-        <div aria-hidden="true" className="flex items-center justify-center gap-3">
-          <span className="h-px w-16 bg-mesh-line" />
-          <span className="h-1.5 w-1.5 rotate-45 bg-mesh-line-strong" />
-          <span className="h-px w-16 bg-mesh-line" />
-        </div>
-        <p className="mono-label normal-case tracking-normal text-mesh-copy">{b.bridge}</p>
-      </div>
-      <SectionLabel chapter={b.chapter} title={b.title} era={b.era} />
+      <SectionLabel chapter={`FIELD ${f.num}`} title={f.title} era={f.name} />
       <p data-reveal className="mb-14 max-w-2xl text-lg text-mesh-copy">
-        <Sentences text={b.narrative} />
+        <Sentences text={f.narrative} />
       </p>
 
       <div data-reveal>
@@ -48,9 +40,9 @@ export function BackendChapter() {
       </div>
 
       <div data-reveal className="mt-20">
-        <span className="mono-label">{b.servicesNote}</span>
+        <span className="mono-label">{f.servicesNote}</span>
         <div className="mt-5 grid gap-4 sm:grid-cols-2 md:grid-cols-4">
-          {b.services.map(s => (
+          {f.services.map(s => (
             <GlassCard key={s.name} className="h-full">
               <div className="font-display text-3xl font-medium text-mesh-text">{s.files.toLocaleString('en-US')}</div>
               <div className="mono-label mt-0.5 text-mesh-muted">files</div>

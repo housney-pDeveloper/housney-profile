@@ -4,7 +4,7 @@ import { gsap } from '@/motion/gsap'
 import { useReducedMotion } from '@/providers/MotionProvider'
 import { profile } from '@/content/profile'
 
-type Tier = (typeof profile.backend.tiers)[number]
+type Tier = (typeof profile.work.fields.backend.tiers)[number]
 
 const GLOW = '0 0 0 1px rgba(0, 0, 0, 0.14), 0 14px 40px rgba(0, 0, 0, 0.12)'
 const NO_GLOW = '0 0 0 0 rgba(0, 0, 0, 0)'
@@ -26,7 +26,7 @@ function TierCard({ tier }: { tier: Tier }) {
 export function BackendArchitecture() {
   const reduced = useReducedMotion()
   const root = useRef<HTMLDivElement>(null)
-  const b = profile.backend
+  const b = profile.work.fields.backend
   const [gateway, app, worker] = b.tiers
 
   // 요청/이벤트가 실제로 흐르는 듯한 글로우 펄스 — 뷰포트 안에서만 루프

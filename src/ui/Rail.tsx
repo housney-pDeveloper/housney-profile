@@ -31,7 +31,7 @@ export function Rail() {
       {profile.rail.map(item => (
         <div key={item.id} className={`flex flex-col items-center gap-1 transition-opacity ${active === item.id ? 'opacity-100' : 'opacity-35'}`}>
           <span className="font-mono text-xs font-bold text-mesh-accent">{item.num}</span>
-          <span className="mono-label text-[0.58rem]">{item.year}</span>
+          <span className="mono-label text-[0.58rem]">{item.label}</span>
         </div>
       ))}
       <span className="h-16 w-px bg-mesh-line" />

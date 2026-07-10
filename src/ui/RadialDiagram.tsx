@@ -11,7 +11,7 @@ const R = 300
 export function RadialDiagram() {
   const reduced = useReducedMotion()
   const svgRef = useRef<SVGSVGElement>(null)
-  const apps = profile.systems.apps
+  const apps = profile.work.fields.frontend.apps
 
   useGSAP(
     () => {
@@ -37,7 +37,7 @@ export function RadialDiagram() {
 
   return (
     <svg ref={svgRef} viewBox="0 0 800 800" className="mx-auto w-full max-w-3xl" role="img"
-      aria-label={`${profile.systems.framework.name}가 ${apps.length}개 업무 앱을 지탱하는 구조. 담당: ${apps.filter(a => a.owned).map(a => a.name).join(', ')}`}>
+      aria-label={`${profile.work.fields.frontend.framework.name}가 ${apps.length}개 업무 앱을 지탱하는 구조. 담당: ${apps.filter(a => a.owned).map(a => a.name).join(', ')}`}>
       {apps.map((app, i) => {
         const angle = (i / apps.length) * Math.PI * 2 - Math.PI / 2
         const x = CX + Math.cos(angle) * R
@@ -61,10 +61,10 @@ export function RadialDiagram() {
       })}
       <circle cx={CX} cy={CY} r="135" fill="rgba(255,255,255,0.92)" stroke="rgba(0,0,0,0.35)" />
       <text x={CX} y={CY - 6} textAnchor="middle" fill="#0a0a0a" style={{ font: '600 17px var(--font-sans)' }}>
-        {profile.systems.framework.name}
+        {profile.work.fields.frontend.framework.name}
       </text>
       <text x={CX} y={CY + 18} textAnchor="middle" fill="#52525b" style={{ font: '12px var(--font-mono)' }}>
-        {profile.systems.framework.metric}
+        {profile.work.fields.frontend.framework.metric}
       </text>
     </svg>
   )
