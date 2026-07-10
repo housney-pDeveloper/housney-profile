@@ -1,6 +1,8 @@
 import { useSectionReveal } from '@/motion/useSectionReveal'
 import { useSplitReveal } from '@/motion/useSplitReveal'
 import { useCountUp } from '@/motion/useCountUp'
+import { useMeshMood } from '@/motion/useMeshMood'
+import { MOOD_ARC } from '@/motion/moodArc'
 import { FieldLabel } from '@/ui/FieldLabel'
 import { ChipRow } from '@/ui/ChipRow'
 import { PipelineDiagram } from '@/ui/PipelineDiagram'
@@ -26,6 +28,7 @@ function Totals() {
 export function FieldDatabase() {
   const root = useSectionReveal<HTMLElement>()
   const callbackRef = useSplitReveal<HTMLParagraphElement>()
+  useMeshMood(root, MOOD_ARC.database)
   return (
     <section ref={root} id="database" className="mx-auto max-w-6xl scroll-mt-24 px-6 py-32 md:px-10">
       <FieldLabel num={f.num} name={f.name} title={f.title} />

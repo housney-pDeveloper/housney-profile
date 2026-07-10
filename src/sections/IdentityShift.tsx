@@ -34,7 +34,7 @@ export function IdentityShift() {
           start: 'top top',
           end: 'bottom bottom',
           scrub: 1.1,
-          onUpdate: self => setMeshMood({ temperature: self.progress }),
+          onUpdate: self => setMeshMood({ temperature: self.progress * 0.25 }),
         },
       })
       tl.fromTo(beforeRef.current, { autoAlpha: 0, y: 40 }, { autoAlpha: 1, y: 0, duration: 0.22 }, 0.05)

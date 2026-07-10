@@ -2,6 +2,8 @@ import { useGSAP } from '@gsap/react'
 import { gsap } from '@/motion/gsap'
 import { useReducedMotion } from '@/providers/MotionProvider'
 import { useSectionReveal } from '@/motion/useSectionReveal'
+import { useMeshMood } from '@/motion/useMeshMood'
+import { MOOD_ARC } from '@/motion/moodArc'
 import { FieldLabel } from '@/ui/FieldLabel'
 import { ChipRow } from '@/ui/ChipRow'
 import { GlassCard } from '@/ui/GlassCard'
@@ -16,6 +18,7 @@ export function FieldInfra() {
   const reduced = useReducedMotion()
   const root = useSectionReveal<HTMLElement>()
   const f = profile.work.fields.infra
+  useMeshMood(root, MOOD_ARC.infra)
 
   // 엣지 → 플레인으로 트래픽이 흐르는 글로우 펄스 (뷰포트 안에서만 루프)
   useGSAP(

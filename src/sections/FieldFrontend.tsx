@@ -1,4 +1,6 @@
 import { useSectionReveal } from '@/motion/useSectionReveal'
+import { useMeshMood } from '@/motion/useMeshMood'
+import { MOOD_ARC } from '@/motion/moodArc'
 import { FieldLabel } from '@/ui/FieldLabel'
 import { ChipRow } from '@/ui/ChipRow'
 import { GlassCard } from '@/ui/GlassCard'
@@ -8,6 +10,7 @@ import { profile } from '@/content/profile'
 export function FieldFrontend() {
   const root = useSectionReveal<HTMLElement>()
   const f = profile.work.fields.frontend
+  useMeshMood(root, MOOD_ARC.frontend)
   return (
     <section ref={root} id="frontend" className="mx-auto max-w-6xl scroll-mt-24 px-6 py-32 md:px-10">
       <FieldLabel num={f.num} name={f.name} title={f.title} />

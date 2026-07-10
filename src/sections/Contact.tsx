@@ -4,6 +4,7 @@ import { gsap } from '@/motion/gsap'
 import { setMeshMood } from '@/canvas/meshBus'
 import { useReducedMotion } from '@/providers/MotionProvider'
 import { useSplitReveal } from '@/motion/useSplitReveal'
+import { MOOD_ARC } from '@/motion/moodArc'
 import { EmailCta } from '@/ui/EmailCta'
 import { profile } from '@/content/profile'
 
@@ -27,7 +28,7 @@ export function Contact() {
             start: 'top bottom',
             end: 'top 45%',
             scrub: 1,
-            onEnter: () => setMeshMood({ intensity: 0.9, temperature: 0.6 }),
+            onEnter: () => setMeshMood(MOOD_ARC.contact),
           },
         },
       )

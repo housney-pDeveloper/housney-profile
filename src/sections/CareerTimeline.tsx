@@ -3,6 +3,8 @@ import { useGSAP } from '@gsap/react'
 import { gsap } from '@/motion/gsap'
 import { useReducedMotion } from '@/providers/MotionProvider'
 import { useSectionReveal } from '@/motion/useSectionReveal'
+import { useMeshMood } from '@/motion/useMeshMood'
+import { MOOD_ARC } from '@/motion/moodArc'
 import { profile } from '@/content/profile'
 
 /** 02 CAREER — 세로 스파인 + 스크럽 진행 펄스, 겹침 없는 경력 카드 3장 */
@@ -10,6 +12,7 @@ export function CareerTimeline() {
   const reduced = useReducedMotion()
   const root = useSectionReveal<HTMLElement>()
   const pulseRef = useRef<HTMLDivElement>(null)
+  useMeshMood(root, MOOD_ARC.career)
 
   useGSAP(
     () => {
