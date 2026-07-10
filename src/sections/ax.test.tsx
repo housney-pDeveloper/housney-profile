@@ -4,7 +4,7 @@ import { MotionProvider } from '@/providers/MotionProvider'
 import { FieldAX } from './FieldAX'
 import { profile } from '@/content/profile'
 
-describe('ChapterAX (FIELD 05)', () => {
+describe('FieldAX (FIELD 05)', () => {
   it('6개 카드와 내러티브 렌더, 균등 3열 그리드', () => {
     const { container } = render(
       <MotionProvider>
