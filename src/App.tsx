@@ -13,6 +13,7 @@ import { WorkIntro } from '@/sections/WorkIntro'
 import { FieldBackend } from '@/sections/FieldBackend'
 import { FieldDatabase } from '@/sections/FieldDatabase'
 import { FieldFrontend } from '@/sections/FieldFrontend'
+import { FieldInfra } from '@/sections/FieldInfra'
 import { FieldAX } from '@/sections/FieldAX'
 import { Contact } from '@/sections/Contact'
 
@@ -35,6 +36,7 @@ export default function App() {
           <FieldBackend />
           <FieldDatabase />
           <FieldFrontend />
+          <FieldInfra />
           <FieldAX />
           <Contact />
         </main>
