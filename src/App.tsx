@@ -7,6 +7,7 @@ import { Rail } from '@/ui/Rail'
 import { Preloader } from '@/sections/Preloader'
 import { Hero } from '@/sections/Hero'
 import { IdentityShift } from '@/sections/IdentityShift'
+import { Declaration } from '@/sections/Declaration'
 import { Timeline } from '@/sections/Timeline'
 import { BackendChapter } from '@/sections/BackendChapter'
 import { ChapterData } from '@/sections/ChapterData'
@@ -27,6 +28,7 @@ export default function App() {
         <main className="relative">
           <Hero booted={booted} />
           <IdentityShift />
+          <Declaration />
           <Timeline />
           <BackendChapter />
           <ChapterData />
