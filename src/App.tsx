@@ -8,7 +8,7 @@ import { Preloader } from '@/sections/Preloader'
 import { Hero } from '@/sections/Hero'
 import { IdentityShift } from '@/sections/IdentityShift'
 import { Declaration } from '@/sections/Declaration'
-import { Timeline } from '@/sections/Timeline'
+import { CareerTimeline } from '@/sections/CareerTimeline'
 import { BackendChapter } from '@/sections/BackendChapter'
 import { ChapterData } from '@/sections/ChapterData'
 import { ChapterSystems } from '@/sections/ChapterSystems'
@@ -29,7 +29,7 @@ export default function App() {
           <Hero booted={booted} />
           <IdentityShift />
           <Declaration />
-          <Timeline />
+          <CareerTimeline />
           <BackendChapter />
           <ChapterData />
           <ChapterSystems />
