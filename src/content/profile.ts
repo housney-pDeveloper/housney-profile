@@ -205,11 +205,11 @@ export const profile = {
   },
 
   backend: {
-    chapter: 'CHAPTER 04',
+    chapter: 'ENGINEERING · DEEP DIVE',
     title: 'BACKEND & SERVICES',
-    era: 'SINCE 2021',
+    era: 'JAVA · SPRING · EVENT-DRIVEN',
     narrative:
-      '시작은 백엔드였습니다. 서버를 짜는 일에서 출발해, 지금은 요청과 이벤트가 흐르는 아키텍처 자체를 설계합니다.',
+      '서버를 짜는 일을 넘어, 요청과 이벤트가 흐르는 아키텍처 자체를 설계합니다. 아래는 지금 운영 중인 백엔드의 실제 골격입니다.',
     archTitle: '요청과 이벤트가 흐르는 3-서버 경계',
     tiers: [
       { id: 'gateway', name: 'Gateway', tech: 'Spring Cloud Gateway · WebFlux', role: 'JWT 인증 · 라우팅 · 리액티브', note: 'stateless' },
@@ -226,9 +226,6 @@ export const profile = {
       { name: '수수료 서비스', detail: 'Quartz 월마감 배치', files: 394 },
       { name: '게이트웨이 코어', detail: '전사 재사용 라이브러리', files: 28 },
     ],
-    chips: ['Java 17 · 21', 'Spring Boot 3', 'Spring Cloud Gateway', 'WebFlux', 'RabbitMQ', 'Redis', 'Quartz', 'MyBatis'],
-    legacy:
-      '2021 굿리치에서 Java · Spring Boot 백엔드로 커리어를 시작 — HR · 리포트 서비스와 데이터 월마감 자동화.',
   },
 
   timeline: [

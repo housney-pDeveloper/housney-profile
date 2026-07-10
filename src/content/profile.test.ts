@@ -40,4 +40,12 @@ describe('profile SSOT integrity', () => {
       expect(blob).not.toMatch(re)
     }
   })
+
+  it('backend는 엔지니어링 쇼케이스 — 시간 서사 필드(legacy/chips) 제거', () => {
+    expect(profile.backend.chapter).toBe('ENGINEERING · DEEP DIVE')
+    expect(profile.backend.era).toBe('JAVA · SPRING · EVENT-DRIVEN')
+    expect(profile.backend.title).toBe('BACKEND & SERVICES')
+    expect('legacy' in profile.backend).toBe(false)
+    expect('chips' in profile.backend).toBe(false)
+  })
 })

@@ -30,6 +30,11 @@ export function BackendChapter() {
 
   return (
     <section ref={root} id="backend" className="mx-auto max-w-6xl scroll-mt-24 px-6 py-32 md:px-10">
+      <div data-reveal aria-hidden="true" className="mb-16 flex items-center justify-center gap-3">
+        <span className="h-px w-16 bg-mesh-line" />
+        <span className="h-1.5 w-1.5 rotate-45 bg-mesh-line-strong" />
+        <span className="h-px w-16 bg-mesh-line" />
+      </div>
       <SectionLabel chapter={b.chapter} title={b.title} era={b.era} />
       <p data-reveal className="mb-14 max-w-2xl text-lg text-mesh-copy">
         <Sentences text={b.narrative} />
@@ -52,16 +57,6 @@ export function BackendChapter() {
           ))}
         </div>
       </div>
-
-      <div data-reveal className="mt-10 flex flex-wrap gap-2">
-        {b.chips.map(chip => (
-          <span key={chip} className="glass-border rounded-full px-3 py-1.5 text-xs text-mesh-copy">{chip}</span>
-        ))}
-      </div>
-
-      <p data-reveal className="mono-label mt-16 max-w-md normal-case tracking-normal text-mesh-muted">
-        {b.legacy}
-      </p>
     </section>
   )
 }
