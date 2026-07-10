@@ -5,7 +5,8 @@ export interface MeshMood {
   temperature: number
 }
 
-const state: MeshMood = { intensity: 1, temperature: 1 }
+// 시드는 01 ABOUT 베이스라인 — MOOD_ARC.career(0.3)보다 낮아 아크가 낮게 출발한다
+const state: MeshMood = { intensity: 1, temperature: 0.25 }
 const listeners = new Set<(m: MeshMood) => void>()
 
 export function getMeshMood(): MeshMood {
