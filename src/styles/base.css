@@ -47,6 +47,11 @@ body {
     linear-gradient(145deg, rgba(0, 0, 0, 0.16), rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.02)) border-box;
 }
 
+/* 카드 호버 그림자 — 기존 자동 글로우 펄스를 대체. 마우스 오버 시에만 떠오른다.
+   (그림자 값은 이전 펄스가 순간 표시하던 GLOW와 동일해 시각 언어를 유지) */
+.hover-elevate { transition: box-shadow 0.3s ease; }
+.hover-elevate:hover { box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.14), 0 14px 40px rgba(0, 0, 0, 0.12); }
+
 /* 모노 라벨 공통 */
 .mono-label {
   font-family: var(--font-mono);

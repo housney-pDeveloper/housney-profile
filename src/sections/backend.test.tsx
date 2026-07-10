@@ -16,9 +16,11 @@ describe('FieldBackend (FIELD 01)', () => {
     expect(screen.getByRole('heading', { name: f.title })).toBeInTheDocument()
     expect(container.textContent).toContain('아키텍처 자체를 설계합니다')
     expect(container.textContent).not.toContain('굿리치')
-    // 요청/이벤트 플로우 펄스 마커 — 3티어 + 이벤트 버스
-    expect(container.querySelectorAll('[data-flow-node]')).toHaveLength(3)
-    expect(container.querySelector('[data-flow-bus]')).toBeTruthy()
+    // 자동 글로우 펄스는 제거됨 — 마우스 오버 시 그림자가 뜨는 hover-elevate로 대체.
+    // 다이어그램 박스 5개(3티어 + 이벤트 버스 + 파운데이션)가 hover-elevate를 갖는다.
+    expect(container.querySelector('[data-flow-node]')).toBeNull()
+    expect(container.querySelectorAll('.hover-elevate')).toHaveLength(5)
+    expect(container.textContent).toContain(f.bus)
     for (const t of f.tiers) {
       expect(screen.getByText(t.name)).toBeInTheDocument()
     }
