@@ -49,7 +49,7 @@ export const profile = {
     name: 'LEE HYEONSU',
     nameKo: '이현수',
     tagline: 'AI로 일하는 조직을 설계합니다.',
-    breadcrumb: ['백엔드', '데이터', '풀스택', 'AX (AI Transformation)'],
+    breadcrumb: ['백엔드', '데이터', '풀스택', '인프라', 'AX (AI Transformation)'],
     stats: [
       { value: 5, suffix: '+', label: 'Years', sub: '2021.02 — 현재' },
       { value: 3, label: 'Systems Built', sub: '금융·SaaS 프로덕션' },

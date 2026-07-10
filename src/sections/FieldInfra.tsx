@@ -4,14 +4,12 @@ import { useReducedMotion } from '@/providers/MotionProvider'
 import { useSectionReveal } from '@/motion/useSectionReveal'
 import { useMeshMood } from '@/motion/useMeshMood'
 import { MOOD_ARC } from '@/motion/moodArc'
+import { GLOW, NO_GLOW } from '@/motion/glowPulse'
 import { FieldLabel } from '@/ui/FieldLabel'
 import { ChipRow } from '@/ui/ChipRow'
 import { GlassCard } from '@/ui/GlassCard'
 import { Sentences } from '@/ui/Sentences'
 import { profile } from '@/content/profile'
-
-const GLOW = '0 0 0 1px rgba(0, 0, 0, 0.14), 0 14px 40px rgba(0, 0, 0, 0.12)'
-const NO_GLOW = '0 0 0 0 rgba(0, 0, 0, 0)'
 
 /** 03 · FIELD 04 — 엣지 라우팅 계층 + 운영 성과 카드 */
 export function FieldInfra() {

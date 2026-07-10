@@ -1,7 +1,6 @@
 import { useRef } from 'react'
-import { useGSAP } from '@gsap/react'
-import { gsap } from '@/motion/gsap'
 import { useReducedMotion } from '@/providers/MotionProvider'
+import { useScrubSpine } from '@/motion/useScrubSpine'
 import { profile, type Lane, type PipelinePackage } from '@/content/profile'
 
 export const LANE_COLOR: Record<Lane, string> = {
@@ -40,32 +39,18 @@ export function PipelineDiagram() {
   const hrs = pkgs.filter(p => p.lane === 'hr')
   const supports = pkgs.filter(p => p.lane === 'support')
 
-  useGSAP(
-    () => {
-      if (reduced || !root.current) return
-      const spine = root.current.querySelector<HTMLElement>('[data-spine]')
-      const nodes = root.current.querySelectorAll<HTMLElement>('[data-lane="main"] [data-pipe-node], [data-lane-col="out"]')
-      if (!spine || !spine.offsetHeight) return
-      gsap.set(spine, { scaleY: 0, transformOrigin: 'top' })
-      gsap.timeline({
-        scrollTrigger: {
-          trigger: root.current,
-          start: 'top 70%',
-          end: 'bottom 55%',
-          scrub: 1,
-          onUpdate: self => {
-            const p = self.progress
-            if (pulseRef.current) pulseRef.current.style.top = `${p * 100}%`
-            nodes.forEach((n, i) => {
-              const threshold = (i + 0.5) / nodes.length
-              n.classList.toggle('pipe-active', p >= threshold)
-            })
-          },
-        },
-      }).to(spine, { scaleY: 1, ease: 'none' })
+  useScrubSpine(root, {
+    spineSelector: '[data-spine]',
+    pulseRef,
+    onProgress: p => {
+      const nodes = root.current?.querySelectorAll<HTMLElement>('[data-lane="main"] [data-pipe-node], [data-lane-col="out"]')
+      if (!nodes) return
+      nodes.forEach((n, i) => {
+        const threshold = (i + 0.5) / nodes.length
+        n.classList.toggle('pipe-active', p >= threshold)
+      })
     },
-    { scope: root, dependencies: [reduced] },
-  )
+  })
 
   return (
     <div ref={root} className="relative">

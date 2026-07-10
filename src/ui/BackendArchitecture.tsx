@@ -2,12 +2,10 @@ import { useRef } from 'react'
 import { useGSAP } from '@gsap/react'
 import { gsap } from '@/motion/gsap'
 import { useReducedMotion } from '@/providers/MotionProvider'
+import { GLOW, NO_GLOW } from '@/motion/glowPulse'
 import { profile } from '@/content/profile'
 
 type Tier = (typeof profile.work.fields.backend.tiers)[number]
-
-const GLOW = '0 0 0 1px rgba(0, 0, 0, 0.14), 0 14px 40px rgba(0, 0, 0, 0.12)'
-const NO_GLOW = '0 0 0 0 rgba(0, 0, 0, 0)'
 
 function TierCard({ tier }: { tier: Tier }) {
   return (

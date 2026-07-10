@@ -8,6 +8,7 @@ export function Declaration() {
   const stmtRef = useSplitReveal<HTMLParagraphElement>()
   return (
     <section ref={root} id="about" className="mx-auto max-w-4xl scroll-mt-24 px-6 py-32 text-center md:px-10">
+      <h2 className="sr-only">About</h2>
       <p ref={stmtRef} className="font-display text-2xl text-mesh-text md:text-4xl">
         {profile.declaration.statement}
       </p>

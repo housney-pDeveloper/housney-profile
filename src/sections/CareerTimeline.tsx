@@ -1,9 +1,8 @@
 import { useRef } from 'react'
-import { useGSAP } from '@gsap/react'
-import { gsap } from '@/motion/gsap'
 import { useReducedMotion } from '@/providers/MotionProvider'
 import { useSectionReveal } from '@/motion/useSectionReveal'
 import { useMeshMood } from '@/motion/useMeshMood'
+import { useScrubSpine } from '@/motion/useScrubSpine'
 import { MOOD_ARC } from '@/motion/moodArc'
 import { profile } from '@/content/profile'
 
@@ -13,34 +12,12 @@ export function CareerTimeline() {
   const root = useSectionReveal<HTMLElement>()
   const pulseRef = useRef<HTMLDivElement>(null)
   useMeshMood(root, MOOD_ARC.career)
-
-  useGSAP(
-    () => {
-      if (reduced || !root.current) return
-      const spine = root.current.querySelector<HTMLElement>('[data-career-spine]')
-      if (!spine || !spine.offsetHeight) return
-      gsap.set(spine, { scaleY: 0, transformOrigin: 'top' })
-      gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: root.current,
-            start: 'top 70%',
-            end: 'bottom 55%',
-            scrub: 1,
-            onUpdate: self => {
-              if (pulseRef.current) pulseRef.current.style.top = `${self.progress * 100}%`
-            },
-          },
-        })
-        .to(spine, { scaleY: 1, ease: 'none' })
-    },
-    { scope: root, dependencies: [reduced] },
-  )
+  useScrubSpine(root, { spineSelector: '[data-career-spine]', pulseRef })
 
   return (
     <section ref={root} id="career" className="mx-auto max-w-4xl scroll-mt-24 px-6 py-32 md:px-10">
       <header className="mb-14 flex items-center gap-4" data-reveal>
-        <span className="mono-label">02 · CAREER</span>
+        <h2 className="mono-label">02 · CAREER</h2>
         <span className="h-px flex-1 bg-mesh-line" aria-hidden="true" />
       </header>
       <div className="relative">

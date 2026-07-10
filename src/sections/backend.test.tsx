@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { render, screen } from '@testing-library/react'
+import { render, screen, within } from '@testing-library/react'
 import { MotionProvider } from '@/providers/MotionProvider'
 import { FieldBackend } from './FieldBackend'
 import { profile } from '@/content/profile'
@@ -26,9 +26,9 @@ describe('FieldBackend (FIELD 01)', () => {
       expect(screen.getByText(s.name)).toBeInTheDocument()
     }
     // 칩 문자열 일부(예: 'Spring Cloud Gateway · WebFlux')는 아키텍처 티어 tech에도
-    // 등장하므로 getAllByText로 최소 1회 렌더를 확인한다.
-    for (const chip of f.chips) {
-      expect(screen.getAllByText(chip).length).toBeGreaterThan(0)
-    }
+    // 등장하므로, 칩 검증은 칩 행 안으로 스코프한다.
+    const chipRow = container.querySelector('[data-chip-row]')
+    expect(chipRow).toBeTruthy()
+    for (const chip of f.chips) expect(within(chipRow as HTMLElement).getByText(chip)).toBeInTheDocument()
   })
 })

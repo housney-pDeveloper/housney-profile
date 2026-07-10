@@ -63,6 +63,8 @@ describe('profile SSOT integrity', () => {
   })
 
   it('채용 흐름: AX 최초 정의 · database 시간 정합 · AX 클로징 · 명시적 클로징', () => {
+    // 브레드크럼은 필드 순서를 미리 보여주는 페이지 맵 — 길이가 fieldOrder와 일치해야 함
+    expect(profile.hero.breadcrumb).toHaveLength(profile.work.fieldOrder.length)
     expect(profile.hero.breadcrumb[profile.hero.breadcrumb.length - 1]).toContain('AI Transformation')
     const n = profile.work.fields.database.narrative
     expect(n).toContain('2021')

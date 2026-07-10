@@ -1,7 +1,12 @@
 import { describe, it, expect } from 'vitest'
 import { MOOD_ARC, ARC_ORDER } from './moodArc'
+import { profile } from '@/content/profile'
 
 describe('mood arc', () => {
+  it('ARC_ORDER는 SSOT와 일치: career + 필드 순서', () => {
+    expect(ARC_ORDER).toEqual(['career', ...profile.work.fieldOrder])
+  })
+
   it('온도는 career→ax로 단조 증가, ax가 최고 온도·최대 강도', () => {
     const temps = ARC_ORDER.map(k => MOOD_ARC[k].temperature)
     for (let i = 1; i < temps.length; i++) {
