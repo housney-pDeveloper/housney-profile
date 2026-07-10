@@ -23,9 +23,6 @@ describe('CareerTimeline (#career)', () => {
     }
     // jsdom은 레이아웃 엔진이 없어서 sticky 이동은 DOM에 반영 안 되지만,
     // data-stack-card 마크만 제거하고 sticky를 다시 추가한 회귀는 감지 못 함.
-    // 따라서 실제 className에서 sticky/will-change-transform 부재를 명시 확인.
-    // jsdom은 레이아웃 엔진이 없어서 sticky 이동은 DOM에 반영 안 되지만,
-    // data-stack-card 마크만 제거하고 sticky를 다시 추가한 회귀는 감지 못 함.
     // 따라서 실제 class 속성에서 sticky/will-change-transform 부재를 명시 확인.
     cards.forEach(card => {
       const classList = card.getAttribute('class') || ''
