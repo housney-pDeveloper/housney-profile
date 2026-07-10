@@ -35,8 +35,8 @@ export default function App() {
           <ChapterSystems />
           <RewindStrip {...profile.rewinds[1]} />
           <ChapterData />
-          <BackendChapter />
           <Timeline />
+          <BackendChapter />
           <Capabilities />
           <Contact />
         </main>
