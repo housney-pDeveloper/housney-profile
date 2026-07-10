@@ -51,7 +51,7 @@ export const profile = {
     name: 'LEE HYEONSU',
     nameKo: '이현수',
     tagline: 'AI로 일하는 조직을 설계합니다.',
-    breadcrumb: ['백엔드', '데이터', '풀스택', 'AX'],
+    breadcrumb: ['백엔드', '데이터', '풀스택', 'AX (AI Transformation)'],
     stats: [
       { value: 5, suffix: '+', label: 'Years', sub: '2021.02 — 현재' },
       { value: 3, label: 'Systems Built', sub: '금융·SaaS 프로덕션' },
@@ -77,7 +77,7 @@ export const profile = {
     chapter: 'CHAPTER 01',
     title: 'AX. NOW.',
     era: '2026 —',
-    opening: '개인의 생산성이 아니라, 조직 전체가 AI로 개발하는 방식을 만들었습니다.',
+    opening: '개인의 생산성 도구가 아니라, 조직 전체가 AI로 개발하는 방식을 만들었습니다.',
     proof: '그 증거 — 직접 설계하고 운영하는 시스템',
     cards: [
       {
@@ -178,8 +178,8 @@ export const profile = {
     title: 'DATA & DOMAIN',
     era: '2021 —',
     narrative:
-      '모든 것의 뿌리는 데이터였습니다. 금융 도메인의 돈이 걸린 월마감 — 굿리치에서 자동화를 시작해, 핀게이트에서 정산 전체 프로세스를 설계했습니다.',
-    callback: '아까 그 35,000줄은, 이렇게 맞물려 돕니다.',
+      '모든 것의 뿌리는 데이터였습니다. 2021년 굿리치 차세대 영업지원 시스템(Vue 2 · Spring Boot)에서 HR·리포트 풀스택과 함께 돈이 걸린 금융 도메인의 월마감을 맡으며 자동화를 시작했고, 핀게이트에 와서는 정산 전체 프로세스를 설계했습니다.',
+    callback: '아까 그 35,000줄 — 핀게이트에서 완성한 정산 엔진은, 이렇게 맞물려 돕니다.',
     packages: [
       { id: 'ctrl', name: '마감 총괄 오케스트레이터', role: '전체 단계를 순차 호출·트랜잭션 통제', loc: 5273, lane: 'conductor' },
       { id: 'risk', name: '리스크 계약 판별', role: '승환·자기계약 등 리스크 선별', loc: 1535, lane: 'main', step: 1 },
@@ -199,14 +199,13 @@ export const profile = {
     laneLabels: { conductor: '지휘', main: '본선', hr: 'HR 선행', support: '지원' } as Record<Lane, string>,
     output: '지급 확정 · 통계 산출 — 월마감 완료',
     totals: { packages: 14, loc: 35_493, tables: 652, tablesShare: '68%' },
-    legacy:
-      '월마감 자동화의 시작점 — 굿리치 차세대 영업지원 시스템(Vue2 · Spring Boot)에서 HR·리포트 풀스택과 데이터 월마감을 담당했습니다.',
   },
 
   backend: {
     chapter: 'ENGINEERING · DEEP DIVE',
     title: 'BACKEND & SERVICES',
     era: 'JAVA · SPRING · EVENT-DRIVEN',
+    bridge: '여정은 여기까지 — 지금부터는 엔지니어를 위한 딥다이브입니다.',
     narrative:
       '서버를 짜는 일을 넘어, 요청과 이벤트가 흐르는 아키텍처 자체를 설계합니다. 아래는 지금 운영 중인 백엔드의 실제 골격입니다.',
     archTitle: '요청과 이벤트가 흐르는 3-서버 경계',
@@ -291,7 +290,7 @@ export const profile = {
     headline: "Let's build the way we build.",
     sub: '함께 조직의 개발 방식을 바꿔볼까요?',
     email: 'hyeonsu1013@naver.com',
-    meta: '— 제가 일하는 방식 그대로 —',
+    meta: '이 페이지도 제가 일하는 방식 그대로 — AI 멀티에이전트와 함께 설계하고, 구현하고, 검증했습니다.',
   },
 } as const
 

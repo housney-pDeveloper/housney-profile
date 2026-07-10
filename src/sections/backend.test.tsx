@@ -21,6 +21,11 @@ describe('BackendChapter', () => {
     expect(container.textContent).toContain('실제 골격')
     // 시간 원점(굿리치 커리어 시작) 문구는 제거됨 — 바로 위 Timeline이 담당
     expect(container.textContent).not.toContain('굿리치')
+    // 브릿지: Timeline(여정의 끝) → 딥다이브 부록 전환 안내
+    expect(container.textContent).toContain(profile.backend.bridge)
+    // 요청/이벤트 플로우 펄스 마커 — 3티어 + 이벤트 버스
+    expect(container.querySelectorAll('[data-flow-node]')).toHaveLength(3)
+    expect(container.querySelector('[data-flow-bus]')).toBeTruthy()
     for (const t of profile.backend.tiers) {
       expect(screen.getByText(t.name)).toBeInTheDocument()
     }

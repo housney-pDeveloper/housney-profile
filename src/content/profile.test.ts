@@ -48,8 +48,28 @@ describe('profile SSOT integrity', () => {
     expect(profile.backend.narrative).toBe(
       '서버를 짜는 일을 넘어, 요청과 이벤트가 흐르는 아키텍처 자체를 설계합니다. 아래는 지금 운영 중인 백엔드의 실제 골격입니다.',
     )
+    // Timeline(여정의 끝) 뒤에 다시 기술 챕터가 나오는 기어 변속을 안내하는 브릿지
+    expect(profile.backend.bridge).toBe('여정은 여기까지 — 지금부터는 엔지니어를 위한 딥다이브입니다.')
     expect('legacy' in profile.backend).toBe(false)
     expect('chips' in profile.backend).toBe(false)
+  })
+
+  it('채용 흐름 보강: AX 최초 정의 · 데이터 챕터 시간 정합 · 명시적 클로징', () => {
+    // 첫 등장(히어로 브레드크럼)에서 AX를 1회 풀어쓴다
+    expect(profile.hero.breadcrumb[profile.hero.breadcrumb.length - 1]).toContain('AI Transformation')
+    // 대비 호응: '생산성을 만들다'가 아니라 '생산성 도구'
+    expect(profile.ax.opening.startsWith('개인의 생산성 도구가 아니라')).toBe(true)
+    // 되감기가 2021에 착지하므로 챕터도 2021 기원(굿리치)부터 시간순으로 전개
+    const n = profile.data.narrative
+    expect(n).toContain('2021')
+    expect(n.indexOf('굿리치')).toBeGreaterThan(0)
+    expect(n.indexOf('굿리치')).toBeLessThan(n.indexOf('핀게이트'))
+    // 35,000줄 파이프라인이 핀게이트 시기 작업임을 콜백이 명시 — Timeline과의 모순 제거
+    expect(profile.data.callback).toContain('핀게이트')
+    // 기원 각주는 내러티브 도입부로 흡수되어 제거
+    expect('legacy' in profile.data).toBe(false)
+    // 클로징: '제가 일하는 방식 그대로'가 이 페이지 자체를 가리킴을 명시
+    expect(profile.contact.meta).toContain('이 페이지')
   })
 
   it('번호 rail은 되감기 3장(ax·systems·data)만 — backend 없음', () => {

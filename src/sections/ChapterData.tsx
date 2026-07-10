@@ -37,9 +37,6 @@ export function ChapterData() {
         <LocBarChart />
       </div>
       <Totals />
-      <p data-reveal className="mono-label mt-16 max-w-5xl normal-case tracking-normal text-mesh-muted">
-        {profile.data.legacy}
-      </p>
     </section>
   )
 }
