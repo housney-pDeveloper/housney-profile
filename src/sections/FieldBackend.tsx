@@ -3,13 +3,14 @@ import { ScrollTrigger } from '@/motion/gsap'
 import { setMeshMood } from '@/canvas/meshBus'
 import { useReducedMotion } from '@/providers/MotionProvider'
 import { useSectionReveal } from '@/motion/useSectionReveal'
-import { SectionLabel } from '@/ui/SectionLabel'
+import { FieldLabel } from '@/ui/FieldLabel'
+import { ChipRow } from '@/ui/ChipRow'
 import { GlassCard } from '@/ui/GlassCard'
 import { BackendArchitecture } from '@/ui/BackendArchitecture'
 import { Sentences } from '@/ui/Sentences'
 import { profile } from '@/content/profile'
 
-export function BackendChapter() {
+export function FieldBackend() {
   const reduced = useReducedMotion()
   const root = useSectionReveal<HTMLElement>()
   const f = profile.work.fields.backend
@@ -30,7 +31,7 @@ export function BackendChapter() {
 
   return (
     <section ref={root} id="backend" className="mx-auto max-w-6xl scroll-mt-24 px-6 py-32 md:px-10">
-      <SectionLabel chapter={`FIELD ${f.num}`} title={f.title} era={f.name} />
+      <FieldLabel num={f.num} name={f.name} title={f.title} />
       <p data-reveal className="mb-14 max-w-2xl text-lg text-mesh-copy">
         <Sentences text={f.narrative} />
       </p>
@@ -52,6 +53,8 @@ export function BackendChapter() {
           ))}
         </div>
       </div>
+
+      <ChipRow chips={f.chips} />
     </section>
   )
 }

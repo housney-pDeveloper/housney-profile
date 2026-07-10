@@ -9,8 +9,9 @@ import { Hero } from '@/sections/Hero'
 import { IdentityShift } from '@/sections/IdentityShift'
 import { Declaration } from '@/sections/Declaration'
 import { CareerTimeline } from '@/sections/CareerTimeline'
-import { BackendChapter } from '@/sections/BackendChapter'
-import { ChapterData } from '@/sections/ChapterData'
+import { WorkIntro } from '@/sections/WorkIntro'
+import { FieldBackend } from '@/sections/FieldBackend'
+import { FieldDatabase } from '@/sections/FieldDatabase'
 import { ChapterSystems } from '@/sections/ChapterSystems'
 import { ChapterAX } from '@/sections/ChapterAX'
 import { Contact } from '@/sections/Contact'
@@ -30,8 +31,9 @@ export default function App() {
           <IdentityShift />
           <Declaration />
           <CareerTimeline />
-          <BackendChapter />
-          <ChapterData />
+          <WorkIntro />
+          <FieldBackend />
+          <FieldDatabase />
           <ChapterSystems />
           <ChapterAX />
           <Contact />

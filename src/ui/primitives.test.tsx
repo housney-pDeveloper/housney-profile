@@ -5,6 +5,8 @@ import { SectionLabel } from './SectionLabel'
 import { StatCounter } from './StatCounter'
 import { NodePill } from './NodePill'
 import { EmailCta } from './EmailCta'
+import { FieldLabel } from './FieldLabel'
+import { ChipRow } from './ChipRow'
 
 const wrap = (ui: React.ReactNode) => render(<MotionProvider>{ui}</MotionProvider>)
 
@@ -36,5 +38,18 @@ describe('ui primitives', () => {
     fireEvent.click(screen.getByRole('link', { name: /hyeonsu1013@naver.com/ }))
     expect(writeText).toHaveBeenCalledWith('hyeonsu1013@naver.com')
     expect(await screen.findByText('클립보드에 복사됨')).toBeInTheDocument()
+  })
+
+  it('FieldLabel — FIELD 번호·분야명·타이틀 렌더', () => {
+    wrap(<FieldLabel num="01" name="Backend" title="BACKEND & SERVICES" />)
+    expect(screen.getByText('FIELD 01')).toBeInTheDocument()
+    expect(screen.getByText('Backend')).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'BACKEND & SERVICES' })).toBeInTheDocument()
+  })
+
+  it('ChipRow — 칩 전부 렌더', () => {
+    wrap(<ChipRow chips={['Java 21', 'Redis']} />)
+    expect(screen.getByText('Java 21')).toBeInTheDocument()
+    expect(screen.getByText('Redis')).toBeInTheDocument()
   })
 })

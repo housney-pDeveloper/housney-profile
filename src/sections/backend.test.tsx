@@ -1,14 +1,14 @@
 import { describe, it, expect } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import { MotionProvider } from '@/providers/MotionProvider'
-import { BackendChapter } from './BackendChapter'
+import { FieldBackend } from './FieldBackend'
 import { profile } from '@/content/profile'
 
-describe('BackendChapter (FIELD 01)', () => {
+describe('FieldBackend (FIELD 01)', () => {
   it('필드 헤더·내러티브·3티어·도메인 서비스 렌더, 섹션 id backend', () => {
     const { container } = render(
       <MotionProvider>
-        <BackendChapter />
+        <FieldBackend />
       </MotionProvider>,
     )
     const f = profile.work.fields.backend
@@ -24,6 +24,11 @@ describe('BackendChapter (FIELD 01)', () => {
     }
     for (const s of f.services) {
       expect(screen.getByText(s.name)).toBeInTheDocument()
+    }
+    // 칩 문자열 일부(예: 'Spring Cloud Gateway · WebFlux')는 아키텍처 티어 tech에도
+    // 등장하므로 getAllByText로 최소 1회 렌더를 확인한다.
+    for (const chip of f.chips) {
+      expect(screen.getAllByText(chip).length).toBeGreaterThan(0)
     }
   })
 })
