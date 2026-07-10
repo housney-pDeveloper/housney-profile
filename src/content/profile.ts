@@ -35,8 +35,8 @@ export const profile = {
     { id: 'ax', label: 'AX' },
     { id: 'systems', label: 'Systems' },
     { id: 'data', label: 'Data' },
-    { id: 'backend', label: 'Backend' },
     { id: 'timeline', label: 'Journey' },
+    { id: 'backend', label: 'Backend' },
     { id: 'contact', label: 'Contact' },
   ],
 
@@ -44,7 +44,6 @@ export const profile = {
     { id: 'ax', num: '01', year: '2026' },
     { id: 'systems', num: '02', year: '2023–26' },
     { id: 'data', num: '03', year: '2021' },
-    { id: 'backend', num: '04', year: '2021 →' },
   ],
 
   hero: {

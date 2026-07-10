@@ -48,4 +48,12 @@ describe('profile SSOT integrity', () => {
     expect('legacy' in profile.backend).toBe(false)
     expect('chips' in profile.backend).toBe(false)
   })
+
+  it('번호 rail은 되감기 3장(ax·systems·data)만 — backend 없음', () => {
+    expect(profile.rail.map(r => r.id)).toEqual(['ax', 'systems', 'data'])
+  })
+
+  it('nav 순서: backend는 timeline 뒤', () => {
+    expect(profile.nav.map(n => n.id)).toEqual(['ax', 'systems', 'data', 'timeline', 'backend', 'contact'])
+  })
 })
