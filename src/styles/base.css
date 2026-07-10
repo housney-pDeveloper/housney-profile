@@ -1,6 +1,26 @@
-:root { color-scheme: dark; }
+/* 실제 팔레트는 밝은 모노크롬 — color-scheme을 light로 맞춰 기본 UI(스크롤바 등)가
+   페이지와 어긋난 다크 톤으로 렌더되지 않게 한다. */
+:root {
+  color-scheme: light;
+  /* Firefox 스크롤바 — 얇게, 썸은 line-strong 톤, 트랙은 페이지가 비치도록 투명 */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.26) transparent;
+}
 
 html { scroll-behavior: auto; }
+
+/* WebKit/Blink 스크롤바 — 미니멀 모노크롬 테마에 맞춘 얇은 필 형태.
+   트랙은 투명(배경 그라디언트가 비침), 썸은 라운드 + 투명 보더로 여백을 줘 떠 보이게. */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.26);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover { background-color: rgba(0, 0, 0, 0.42); }
+::-webkit-scrollbar-corner { background: transparent; }
 
 body {
   min-height: 100vh;
