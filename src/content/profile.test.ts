@@ -45,6 +45,9 @@ describe('profile SSOT integrity', () => {
     expect(profile.backend.chapter).toBe('ENGINEERING · DEEP DIVE')
     expect(profile.backend.era).toBe('JAVA · SPRING · EVENT-DRIVEN')
     expect(profile.backend.title).toBe('BACKEND & SERVICES')
+    expect(profile.backend.narrative).toBe(
+      '서버를 짜는 일을 넘어, 요청과 이벤트가 흐르는 아키텍처 자체를 설계합니다. 아래는 지금 운영 중인 백엔드의 실제 골격입니다.',
+    )
     expect('legacy' in profile.backend).toBe(false)
     expect('chips' in profile.backend).toBe(false)
   })
