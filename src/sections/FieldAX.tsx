@@ -4,11 +4,12 @@ import { setMeshMood } from '@/canvas/meshBus'
 import { useReducedMotion } from '@/providers/MotionProvider'
 import { useSectionReveal } from '@/motion/useSectionReveal'
 import { useSplitReveal } from '@/motion/useSplitReveal'
-import { SectionLabel } from '@/ui/SectionLabel'
+import { FieldLabel } from '@/ui/FieldLabel'
+import { ChipRow } from '@/ui/ChipRow'
 import { GlassCard } from '@/ui/GlassCard'
 import { profile } from '@/content/profile'
 
-export function ChapterAX() {
+export function FieldAX() {
   const reduced = useReducedMotion()
   const root = useSectionReveal<HTMLElement>()
   const narrativeRef = useSplitReveal<HTMLParagraphElement>()
@@ -30,7 +31,7 @@ export function ChapterAX() {
 
   return (
     <section ref={root} id="ax" className="mx-auto max-w-6xl scroll-mt-24 px-6 py-32 md:px-10">
-      <SectionLabel chapter={`FIELD ${f.num}`} title={f.title} era={f.name} />
+      <FieldLabel num={f.num} name={f.name} title={f.title} />
       <p ref={narrativeRef} className="mb-6 max-w-4xl font-display text-2xl text-mesh-copy md:text-3xl">
         {f.narrative}
       </p>
@@ -50,6 +51,10 @@ export function ChapterAX() {
           </div>
         ))}
       </div>
+      <p data-reveal className="mt-14 text-center font-display text-xl text-mesh-text md:text-2xl">
+        {f.closing}
+      </p>
+      <ChipRow chips={f.chips} />
     </section>
   )
 }

@@ -12,8 +12,8 @@ import { CareerTimeline } from '@/sections/CareerTimeline'
 import { WorkIntro } from '@/sections/WorkIntro'
 import { FieldBackend } from '@/sections/FieldBackend'
 import { FieldDatabase } from '@/sections/FieldDatabase'
-import { ChapterSystems } from '@/sections/ChapterSystems'
-import { ChapterAX } from '@/sections/ChapterAX'
+import { FieldFrontend } from '@/sections/FieldFrontend'
+import { FieldAX } from '@/sections/FieldAX'
 import { Contact } from '@/sections/Contact'
 
 export default function App() {
@@ -34,8 +34,8 @@ export default function App() {
           <WorkIntro />
           <FieldBackend />
           <FieldDatabase />
-          <ChapterSystems />
-          <ChapterAX />
+          <FieldFrontend />
+          <FieldAX />
           <Contact />
         </main>
       </LenisProvider>
